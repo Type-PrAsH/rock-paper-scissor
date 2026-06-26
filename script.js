@@ -36,6 +36,15 @@
 // // console.log(library);
 // // console.log(library[0].info);
 
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissor = document.querySelector("#scissor");
+const divResult = document.querySelector("#result");
+const divScore = document.querySelector("#score");
+
+rock.addEventListener("click", ()=>playRound("ROCK"));
+paper.addEventListener("click", ()=>playRound("PAPER"));
+scissor.addEventListener("click", ()=>playRound("SCISSOR"));
 
 let humanScore=0, computerScore=0;
 
@@ -54,30 +63,30 @@ function getComputerChoice()
     return "Scissor";
 }
 
-function getHumanChoice()
-{
-    return (prompt("Choose", "Rock")).toUpperCase();
-}
 
-function playRound()
+function playRound(human)
 {
     let computer = getComputerChoice();
-    let human = getHumanChoice();
 
     if(human=="ROCK")
     {
         if(computer == "Rock")
         {
             console.log("Computer choosed ROCK, It's a DRAW!!!");
+            divScore.textContent= `You: ${humanScore} Computer: ${computerScore}`;
         }
         if(computer == "Paper")
         {
             console.log("Computer choosed Paper, you LOSE!!!");
+            divResult.textContent=`Computer choosed Paper, you LOSE!!!`;
+            divScore.textContent= `You: ${humanScore} Computer: ${computerScore}`;
             computerScore++;
         }
         if(computer == "Scissor")
         {
             console.log("Computer choosed Scissor, you WIN!!!");
+            divResult.textContent=`Computer choosed Scissor, you WIN!!!`;
+            divScore.textContent= `You: ${humanScore} Computer: ${computerScore}`;
             humanScore++;
         }
     }
@@ -86,15 +95,20 @@ function playRound()
         if(computer == "Rock")
         {
             console.log("Computer choosed ROCK, you WIN!!!");
+            divScore.textContent= `You: ${humanScore} Computer: ${computerScore}`;
+            divResult.textContent="Computer choosed ROCK, you WIN!!!";
             humanScore++;
         }
         if(computer == "Paper")
         {
             console.log("Computer choosed Paper, It's a DRAW!!!");
+            divScore.textContent= `You: ${humanScore} Computer: ${computerScore}`;
         }
         if(computer == "Scissor")
         {
             console.log("Computer choosed Scissor, you LOSE!!!");
+            divScore.textContent= `You: ${humanScore} Computer: ${computerScore}`;
+            divResult.textContent="Computer choosed Scissor, you LOSE!!!";
             computerScore++;
         }
     }
@@ -103,37 +117,21 @@ function playRound()
         if(computer == "Rock")
         {
             console.log("Computer choosed ROCK, you LOSE!!!");
+            divScore.textContent= `You: ${humanScore} Computer: ${computerScore}`;
+            divResult.textContent="Computer choosed ROCK, you LOSE!!!";
             computerScore++;
         }
         if(computer == "Paper")
         {
             console.log("Computer choosed Paper, you WIN!!!");
+            divScore.textContent= `You: ${humanScore} Computer: ${computerScore}`;
+            divResult.textContent="Computer choosed Paper, you WIN!!!";
             humanScore++;
         }
         if(computer == "Scissor")
         {
             console.log("Computer choosed Scissor, It's a DRAW!!!");
+            divScore.textContent= `You: ${humanScore} Computer: ${computerScore}`;
         }
     }
 }
-
-function playGame()
-{
-    for(let i=0; i<5; i++)
-    {
-        playRound();
-    }
-
-    console.log(`Your Score: ${humanScore} Computer Score: ${computerScore}`)
-
-    if(humanScore>computerScore)
-    {
-        console.log("You Win");
-    }
-    else
-    {
-        console.log("You Lose");
-    }
-                
-}
-playGame();
