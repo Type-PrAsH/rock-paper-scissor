@@ -73,65 +73,68 @@ function playRound(human)
         if(computer == "Rock")
         {
             console.log("Computer choosed ROCK, It's a DRAW!!!");
+            divResult.textContent=`Computer choosed ROCK, It's a DRAW!!!`;
             divScore.textContent= `You: ${humanScore} Computer: ${computerScore}`;
         }
         if(computer == "Paper")
-        {
+        {computerScore++;
             console.log("Computer choosed Paper, you LOSE!!!");
             divResult.textContent=`Computer choosed Paper, you LOSE!!!`;
             divScore.textContent= `You: ${humanScore} Computer: ${computerScore}`;
-            computerScore++;
+            
         }
         if(computer == "Scissor")
-        {
+        {humanScore++;
             console.log("Computer choosed Scissor, you WIN!!!");
             divResult.textContent=`Computer choosed Scissor, you WIN!!!`;
             divScore.textContent= `You: ${humanScore} Computer: ${computerScore}`;
-            humanScore++;
+            
         }
     }
     else if(human=="PAPER")
     {
         if(computer == "Rock")
-        {
+        {humanScore++;
             console.log("Computer choosed ROCK, you WIN!!!");
             divScore.textContent= `You: ${humanScore} Computer: ${computerScore}`;
             divResult.textContent="Computer choosed ROCK, you WIN!!!";
-            humanScore++;
+            
         }
         if(computer == "Paper")
         {
             console.log("Computer choosed Paper, It's a DRAW!!!");
+            divResult.textContent=`Computer choosed Paper, It's a DRAW!!!`;
             divScore.textContent= `You: ${humanScore} Computer: ${computerScore}`;
         }
         if(computer == "Scissor")
-        {
+        {computerScore++;
             console.log("Computer choosed Scissor, you LOSE!!!");
             divScore.textContent= `You: ${humanScore} Computer: ${computerScore}`;
             divResult.textContent="Computer choosed Scissor, you LOSE!!!";
-            computerScore++;
+            
         }
     }
     else if(human=="SCISSOR")
     {
         if(computer == "Rock")
-        {
+        {computerScore++;
             console.log("Computer choosed ROCK, you LOSE!!!");
             divScore.textContent= `You: ${humanScore} Computer: ${computerScore}`;
             divResult.textContent="Computer choosed ROCK, you LOSE!!!";
-            computerScore++;
+            
         }
         if(computer == "Paper")
-        {
+        {humanScore++;
             console.log("Computer choosed Paper, you WIN!!!");
             divScore.textContent= `You: ${humanScore} Computer: ${computerScore}`;
             divResult.textContent="Computer choosed Paper, you WIN!!!";
-            humanScore++;
+            
         }
         if(computer == "Scissor")
         {
             console.log("Computer choosed Scissor, It's a DRAW!!!");
             divScore.textContent= `You: ${humanScore} Computer: ${computerScore}`;
+            divResult.textContent=`Computer choosed Scissor, It's a DRAW!!!`;
         }
     }
 }
